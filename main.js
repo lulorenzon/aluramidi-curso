@@ -1,56 +1,46 @@
-// function tocaSom (seletorAudio) {
-//     const elemento = document.querySelector(seletorAudio);
+function tocaSomPiano (seletorAudio) {
+    //seletorAudio como nem tem tag 
+    const elemento = document.querySelector(seletorAudio);
 
-//     if (elemento && elemento.localName === 'audio') {
-//         elemento.play();
-//     }
-//     else {
-//         //alert('Elemento não encontrado');
-//         console.log('Elemento não encontrado ou seletor inválido');
-//     }
+    if (elemento && elemento.localName === 'audio') {
+        elemento.play();
+    } //se a seleção achar a tag da o play no som
+    else {
+        //alert('Elemento não encontrado');
+        console.log('Elemento não encontrado ou seletor inválido');
+    }
 
-// }
+}
 
-// const listaDeTeclas = document.querySelectorAll('.tecla');
+const listaDeTeclas = document.querySelectorAll('.tecla');
 
-// //para
-// for (let contador = 0; contador < listaDeTeclas.length; contador++) {
+//para
+for (let contador = 0; contador < listaDeTeclas.length; contador++) {
 
-//     const tecla = listaDeTeclas[contador];
-//     const instrumento = tecla.classList[1];
-//     const idAudio = `#som_${instrumento}`; //template string
+// atributo classList acessa todas as classes do elemento do array [0] 
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+    const idAudio = `#som_${instrumento}`; //template string
 
-//     tecla.onclick = function () {
-//         tocaSom(idAudio);
-//     }
+    tecla.onclick = function () {
+        tocaSomPiano(idAudio);
+    }
 
-//     tecla.onkeydown = function (evento) {
+    tecla.onkeydown = function (evento) {
 
-//         if (evento.code === 'Space' || evento.code === 'Enter') {
-//             tecla.classList.add('ativa');
-//         }
+        if (evento.code === 'Space' || evento.code === 'Enter') {
+            tecla.classList.add('ativa');
+        }
+        // onkeydown quando clica nas teclas e dipara o evento  com a tecla space  ou enter 
 
-//     }
+    }
 
-//     tecla.onkeyup = function () {
-//         tecla.classList.remove('ativa');
-//     }
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa');
+    }
+    // logica para quando o usuario solta a tecla do teclado onkeyup  
 
-// }
+}
 
 
 
-palavraPalindromo()
-
-function  palavraPalindromo () {
-  const palavra = "rever";
-  const separandoPalavra = palavra.split ("");
-  const palavraInvertida = separandoPalavra.reverse()
-  palavraInvertida = palavraInvertida,join("");
-
-  if (palavra == palavraInvertida){
-    console.log("palavra invertida" + palavra + "é um polindromo");
-  } else {
-    console.log("palavra invertida" + palavra + "é um polindromo");
-  }
-  }

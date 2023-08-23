@@ -33,3 +33,21 @@ const essaPalavraPalindromo = function () {
   
 }
 essaPalavraPalindromo()
+
+
+const palavraPalindromo = function () {
+    var palavra = "escola";
+    var separandoPalavra = palavra.split ("");
+    var palavraInvertida = separandoPalavra.reverse();
+    palavraInvertida = palavraInvertida.join("");
+  
+    if (palavra == palavraInvertida){
+      console.log("palavra invertida " + palavra + " é um polindromo");
+    }
+      
+    else {
+      console.log("palavra invertida " + palavra + " nao é um polindromo");
+    }
+    
+  }
+  palavraPalindromo()
